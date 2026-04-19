@@ -1,0 +1,9 @@
+main{
+            width: fit-content;
+            border: 2px solid #a6a6a8;
+            border-radius: 10px;
+            margin: 40px auto;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 5px 5px #b3b3b5;
+        }

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Events</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='Adobe Express - file.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='wedding_style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="{{url_for('static', filename='jquery-3.7.1.js')}}"></script>
+    <script src="{{url_for('static', filename='ham.js')}}"></script>
+</head>
+<body>
+    <header id="hdr">
+        <section class="logo">
+            <a href="/"><img src="{{url_for('static', filename='Adobe Express - file.png')}}" alt="logo"></a>
+            <!-- <img src="{{url_for('static', filename='logo.png')}}"> -->
+        </section>
+        <nav>
+        <section class="links">
+        <a href="/wedding">Weddings</a>
+        <a href="/corporate">Corporate events</a>
+        <a href="/privatep">Private Parties</a>
+        <a href="/menu">Menu</a>
+        </section>
+        <section class="dropdown">
+            {% if session.get('username') %}
+                <a href="/profile">Profile</a>
+            {% else %}
+                <a href="#">Account</a>
+                <section class="drop">
+                    <ul>
+                        <li><a href="/login">Log In</a></li>
+                        <li><a href="/sign">Sign In</a></li>
+                    </ul>
+                </section>
+            {% endif %}
+        </section>
+        </nav>
+        <button id="ham"><i class="fa fa-bars" style="font-size:24px"></i></button>
+    </header>
+    <section class="ham">
+            <ul id="list">
+                <li><a href="/wedding">Weddings</a></li>
+                <li><a href="/corporate">Corporate events</a></li>
+                <li><a href="/privatep">Private Parties</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/login">Log In</a></li>
+                <li><a href="/sign">Sign In</a></li>
+            </ul>
+    </section>
+    <main>
+        <section class="info">
+            <section class="img">
+                <h1>Wedding Events</h1>
+                <img src="{{url_for('static', filename='wedding.jpg')}}" alt="A bride and groom hold a bouquet together.">
+            </section>
+            <section class="txt">
+                <h2>Planning An Event?</h2><br>
+                <p>
+                    Planning an event can be a daunting task, especially when it comes to catering.
+                </p><br>
+                <p class="text">
+                    Food served at your event will significantly impact your guests’ overall experience, making it crucial to get it right.
+                </p><br>
+                <p class="text">
+                    Choosing the right caterer is essential in ensuring that everything runs smoothly.
+                </p><br>
+                <p class="text">
+                    From deciding on the menu to accommodating dietary restrictions and allergies, there are several factors to consider when selecting a caterer.
+                </p>
+            </section>
+        </section>
+        <section class="prevEvents">
+            <h1>Our Previous Events</h1>
+            <p>Delight your guests at your next event with world-class catering from us. </p>
+            <section class="gallery">
+                <section class="event"><img src="{{url_for('static', filename='wd1.jpg')}}" alt="A platter of bite-sized appetizers in the foreground at a wedding reception."></section>
+                <section class="event"><img src="{{url_for('static', filename='wd2.jpg')}}" alt="Guests serving themselves fresh salads and dishes at an outdoor buffet."></section>
+                <section class="event"><img src="{{url_for('static', filename='wd3.jpg')}}" alt="People in formal attire filling plates from a hot buffet line."></section>
+            </section>
+            <section class="book">
+                <a href="/order"><b>Book Now</b></a>
+            </section>
+        </section>
+        <section class="highlights">
+            <h1>Highlight what’s great in <a href="/menu">Menu</a></h1>
+            <p>Eat, drink, and be happy.</p>
+            <section class="menu">
+                <a href="/menu">
+                <img src="{{url_for('static', filename='wed1.jpg')}}" alt="steak fries">
+                <img src="{{url_for('static', filename='wed2.jpg')}}" alt="tuna loin and veal">
+                <img src="{{url_for('static', filename='wed3.jpg')}}" alt="beef tournedos">
+                <img src="{{url_for('static', filename='wed4.jpg')}}" alt="veg platter">
+                <img src="{{url_for('static', filename='wed5.png')}}" alt="thai style salad">
+                <img src="{{url_for('static', filename='wed6.png')}}" alt="surf and turf">
+                <img src="{{url_for('static', filename='wed8.jpg')}}" alt="steak frites">
+                </a>
+            </section>
+        </section>
+    </main>
+    <section class="btop">
+        <a href="#hdr"><i class="fa fa-arrow-up" style="font-size:24px"></i></a>
+    </section>
+    <footer>
+            <section class="footer1">
+            <h3>GMK CATERERS</h3>
+            <p>Your Event Our Service</p>
+            <section class="icons">
+                <i class="fa fa-instagram" style="font-size:24px"></i>
+                <i class="fa fa-facebook" style="font-size:24px"></i>
+                <i class="fa fa-twitter" style="font-size:24px"></i>
+            </section>
+            </section>
+            <section class="footer2">
+            <h4>Learn More</h4>
+            <ul>
+                <li><a href="/testimonial">Testimonials</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+            </section>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+main{
+    text-align: center;
+}
+.feedback{
+    padding: 3%;
+    background-color: #E8E9F3;
+}
+.error{
+    color: red;
+}
+.grn{
+    color: green;
+}
+.mfeedback{
+    float: right;
+    margin: 10px;
+    color: #000000;
+}
+hr{
+    width: 80%;
+    margin: 10px auto;
+}

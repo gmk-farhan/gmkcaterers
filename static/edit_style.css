@@ -1,0 +1,10 @@
+main{
+            padding: 3%;
+            text-align: center;
+        }
+        form{
+            width: fit-content;
+            padding: 2%;
+            margin: 20px auto;
+            box-shadow: 5px 5px #b3b3b5;
+        }

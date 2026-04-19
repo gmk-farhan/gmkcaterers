@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='Adobe Express - file.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='login_style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="{{url_for('static', filename='jquery-3.7.1.js')}}"></script>
+    <script src="{{url_for('static', filename='ham.js')}}"></script>
+</head>
+<body>
+    <header id="hdr">
+        <section class="logo">
+            <a href="/"><img src="{{url_for('static', filename='Adobe Express - file.png')}}" alt="logo"></a>
+            <!-- <img src="{{url_for('static', filename='logo.png')}}"> -->
+        </section>
+        <nav>
+        <section class="links">
+        <a href="/wedding">Weddings</a>
+        <a href="/corporate">Corporate events</a>
+        <a href="/privatep">Private Parties</a>
+        <a href="/menu">Menu</a>
+        </section>
+        <section class="dropdown">
+            {% if session.get('username') %}
+                <a href="/profile">Profile</a>
+            {% else %}
+                <a href="#">Account</a>
+                <section class="drop">
+                    <ul>
+                        <li><a href="/login">Log In</a></li>
+                        <li><a href="/sign">Sign In</a></li>
+                    </ul>
+                </section>
+            {% endif %}
+        </section>
+        </nav>
+        <button id="ham"><i class="fa fa-bars" style="font-size:24px"></i></button>
+    </header>
+    <section class="ham">
+            <ul id="list">
+                <li><a href="/wedding">Weddings</a></li>
+                <li><a href="/corporate">Corporate events</a></li>
+                <li><a href="/privatep">Private Parties</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/login">Log In</a></li>
+                <li><a href="/sign">Sign In</a></li>
+            </ul>
+    </section>
+    <main>
+        <h3>Log In</h3>
+        <p style="color: green;">{{msg}}</p>
+        <form action="" method="post">
+            <p style="color: red;">{{error}}</p>
+            <label for="username">Username</label><br>
+            <input type="text" name="username" id="username"><br>
+            <label for="pass">Password</label><br>
+            <input type="password" name="password" id="password"><br><br>
+            <input type="submit" value="Log In">
+            <input type="reset" value="Reset">
+        </form>
+        <p>New User?<a href="/sign">Sign in</a></p>
+    </main>
+    <section class="btop">
+        <a href="#hdr"><i class="fa fa-arrow-up" style="font-size:24px"></i></a>
+    </section>
+    <footer>
+            <section class="footer1">
+            <h3>GMK CATERERS</h3>
+            <p>Your Event Our Service</p>
+            <section class="icons">
+                <i class="fa fa-instagram" style="font-size:24px"></i>
+                <i class="fa fa-facebook" style="font-size:24px"></i>
+                <i class="fa fa-twitter" style="font-size:24px"></i>
+            </section>
+            </section>
+            <section class="footer2">
+            <h4>Learn More</h4>
+            <ul>
+                <li><a href="/testimonial">Testimonials</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+            </section>
+    </footer>
+</body>
+</html>

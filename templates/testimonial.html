@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='Adobe Express - file.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='testimonial_style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="{{url_for('static', filename='jquery-3.7.1.js')}}"></script>
+    <script src="{{url_for('static', filename='ham.js')}}"></script>
+</head>
+<body>
+    <header id="hdr">
+        <section class="logo">
+            <a href="/"><img src="{{url_for('static', filename='Adobe Express - file.png')}}" alt="logo"></a>
+            <!-- <img src="{{url_for('static', filename='logo.png')}}"> -->
+        </section>
+        <nav>
+        <section class="links">
+        <a href="/wedding">Weddings</a>
+        <a href="/corporate">Corporate events</a>
+        <a href="/privatep">Private Parties</a>
+        <a href="/menu">Menu</a>
+        </section>
+        <section class="dropdown">
+            {% if session.get('username') %}
+                <a href="/profile">Profile</a>
+            {% else %}
+                <a href="#">Account</a>
+                <section class="drop">
+                    <ul>
+                        <li><a href="/login">Log In</a></li>
+                        <li><a href="/sign">Sign In</a></li>
+                    </ul>
+                </section>
+            {% endif %}
+        </section>
+        </nav>
+        <button id="ham"><i class="fa fa-bars" style="font-size:24px"></i></button>
+    </header>
+    <section class="ham">
+            <ul id="list">
+                <li><a href="/wedding">Weddings</a></li>
+                <li><a href="/corporate">Corporate events</a></li>
+                <li><a href="/privatep">Private Parties</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/login">Log In</a></li>
+                <li><a href="/sign">Sign In</a></li>
+            </ul>
+    </section>
+    <main>
+        <h1>Testimonials</h1>
+        <section class="respose">
+            <p>Great catering service with tasty food, punctual delivery, and friendly staff who made the event stress-free.</p>
+            <h4><i class="fa fa-user-circle-o" style="font-size:24px"></i> Olivia</h4><hr>
+            <p>Delicious meals, beautifully presented, and delivered on time—highly reliable and professional catering team.</p>
+            <h4><i class="fa fa-user-circle-o" style="font-size:24px"></i> Amelia</h4><hr>
+            <p>Outstanding service with fresh food, excellent variety, and attentive staff who handled everything perfectly.</p>
+            <h4><i class="fa fa-user-circle-o" style="font-size:24px"></i> Noah</h4><hr>
+            <p>Very impressed with quality, timely setup, and courteous staff—everything ran smoothly from start to finish.</p>
+            <h4><i class="fa fa-user-circle-o" style="font-size:24px"></i> Liam</h4><hr>
+        </section>
+        <a href="/feedbacks" class="mfeedback">All Feedbacks <i class="fa fa-arrow-right"></i></a><br><br>
+        {% if feed %}
+        <section class="response" id="#response">
+        {% for info in feed %}
+            <p>{{info.message}}</p>
+            <h4><i class="fa fa-user-circle-o" style="font-size:24px"></i> {{info.name}}</h4><hr>
+        {% endfor %}
+        </section>
+        {% endif %}
+        <section class="feedback">
+            <h2>Send Us Your Feedback</h2>
+            <p class="error">{{msg}}</p>
+            <p class="grn">{{smsg}}</p>
+            <form action="/testimonial" method="post">
+            <label for="name">Name</label><br>
+            <input type="text" name="name" id="name"><br>
+            <p class="error">{{msg1}}</p>
+            <label for="email">Email</label><br>
+            <input type="text" name="email" id="email"><br>
+            <p class="error">{{msg2}}</p>
+            <label for="msg">Write Your Feedback</label><br>
+            <textarea name="message" id="message"></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+        </section>
+    </main>
+    <section class="btop">
+        <a href="#hdr"><i class="fa fa-arrow-up" style="font-size:24px"></i></a>
+    </section>
+    <footer>
+            <section class="footer1">
+            <h3>GMK CATERERS</h3>
+            <p>Your Event Our Service</p>
+            <section class="icons">
+                <i class="fa fa-instagram" style="font-size:24px"></i>
+                <i class="fa fa-facebook" style="font-size:24px"></i>
+                <i class="fa fa-twitter" style="font-size:24px"></i>
+            </section>
+            </section>
+            <section class="footer2">
+            <h4>Learn More</h4>
+            <ul>
+                <li><a href="/testimonial">Testimonials</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+            </section>
+    </footer>
+</body>
+</html>

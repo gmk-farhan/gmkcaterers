@@ -1,0 +1,13 @@
+main{
+    padding: 2%;
+    text-align: center;
+}
+form{
+    border: 2px solid #a6a6a8;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 2%;
+    margin: 20px auto;
+    box-shadow: 5px 5px #b3b3b5;
+
+}

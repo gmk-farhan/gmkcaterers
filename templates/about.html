@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='Adobe Express - file.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='about.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="{{url_for('static', filename='jquery-3.7.1.js')}}"></script>
+    <script src="{{url_for('static', filename='ham.js')}}"></script>
+    
+</head>
+<body>
+    <header id="hdr">
+        <section class="logo">
+            <a href="/"><img src="{{url_for('static', filename='Adobe Express - file.png')}}" alt="logo"></a>
+            <!-- <img src="{{url_for('static', filename='logo.png')}}"> -->
+        </section>
+        <nav>
+        <section class="links">
+        <a href="/wedding">Weddings</a>
+        <a href="/corporate">Corporate events</a>
+        <a href="/privatep">Private Parties</a>
+        <a href="/menu">Menu</a>
+        </section>
+        <section class="dropdown">
+            {% if session.get('username') %}
+                <a href="/profile">Profile</a>
+            {% else %}
+                <a href="#">Account</a>
+                <section class="drop">
+                    <ul>
+                        <li><a href="/login">Log In</a></li>
+                        <li><a href="/sign">Sign In</a></li>
+                    </ul>
+                </section>
+            {% endif %}
+        </section>
+        </nav> 
+        <button id="ham"><i class="fa fa-bars" style="font-size:24px"></i></button>
+    </header>
+    <section class="ham">
+            <ul id="list">
+                <li><a href="/wedding">Weddings</a></li>
+                <li><a href="/corporate">Corporate events</a></li>
+                <li><a href="/privatep">Private Parties</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/login">Log In</a></li>
+                <li><a href="/sign">Sign In</a></li>
+            </ul>
+        </section>
+    <main>
+        <h1>About Us</h1>
+        <section class="about">
+            <section class="image">
+                <img src="{{url_for('static', filename='Adobe Express - file.png')}}" alt="gmk caterers logo">
+            </section>
+            <section class="text">
+                <h2>Intro</h2><br>
+                <p>GMK Caterers strives to deliver professional and efficient services to cater to different events such as weddings, corporate events, parties, and seasonal cultural and/or religious events.</p><br>
+                <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam omnis incidunt maxime cupiditate nobis eius expedita dignissimos earum exercitationem dolor nulla, hic, illo ipsum dolorem animi explicabo quo laborum sed. Consectetur soluta ut dolore consequatur eligendi dolor distinctio libero adipisci sapiente non vel quaerat, ea et quo pariatur neque maxime?</p>
+            </section>
+        </section>
+        <section class="histroy">
+            <section class="text">
+                <h2>Histroy</h2><br>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, optio. Porro minus totam molestias nesciunt cum quia neque doloremque nobis vitae. Harum ea et quidem architecto distinctio quaerat ex. Impedit molestiae assumenda aperiam inventore aliquam enim, aut modi ipsam maiores?</p><br>
+                <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur consequuntur dolore alias quasi, architecto laboriosam illo doloremque delectus unde libero repudiandae esse culpa sed eligendi modi eveniet consectetur, odit eos!</p>
+            </section>
+            <section class="image">
+                <img src="{{url_for('static', filename='Charminar.jpg')}}" alt="Charminar monument in hyderabad india.">
+            </section>
+        </section>
+        <section class="bottom">
+            <h1>Gallery</h1>
+            <section class="gallery">
+                <img src="{{url_for('static', filename='gl1 (2).jpeg')}}" alt="gallery image 2">
+                <img src="{{url_for('static', filename='gl1 (2).webp')}}" alt="gallery image 3">
+                <img src="{{url_for('static', filename='gl1 (3).jpeg')}}" alt="gallery image 4">
+            </section>
+            <section class="gallery">
+                <img src="{{url_for('static', filename='gl1 (4).jpeg')}}" alt="gallery image 5">
+                <img src="{{url_for('static', filename='gl1 (5).jpeg')}}" alt="gallery image 6">
+                <img src="{{url_for('static', filename='gl1 (6).jpeg')}}" alt="gallery image 7">
+            </section>
+            <section class="gallery">
+                <img src="{{url_for('static', filename='gl1 (7).jpeg')}}" alt="gallery image 8">
+                <img src="{{url_for('static', filename='gl1.jpeg')}}" alt="gallery image 9">
+                <img src="{{url_for('static', filename='off3.jpg')}}" alt="gallery image 10">
+            </section>
+            <section class="gallery">
+                <img src="{{url_for('static', filename='off2.jpg')}}" alt="gallery image 11">
+                <img src="{{url_for('static', filename='off1.jpg')}}" alt="gallery image 12">
+                <img src="{{url_for('static', filename='wd1.jpg')}}" alt="gallery image 13">
+            </section>
+            <section class="gallery">
+                <img src="{{url_for('static', filename='wd2.jpg')}}" alt="gallery image 14">
+                <img src="{{url_for('static', filename='wd3.jpg')}}" alt="gallery image 15">
+                <img src="{{url_for('static', filename='pp1.jpg')}}" alt="gallery image 16">
+            </section>
+        </section>
+    </main>
+    <section class="btop">
+        <a href="#hdr"><i class="fa fa-arrow-up" style="font-size:24px"></i></a>
+    </section>
+    <footer>
+            <section class="footer1">
+            <h3>GMK CATERERS</h3>
+            <p>Your Event Our Service</p>
+            <section class="icons">
+                <i class="fa fa-instagram" style="font-size:24px"></i>
+                <i class="fa fa-facebook" style="font-size:24px"></i>
+                <i class="fa fa-twitter" style="font-size:24px"></i>
+            </section>
+            </section>
+            <section class="footer2">
+            <h4>Learn More</h4>
+            <ul>
+                <li><a href="/testimonial">Testimonials</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+            </section>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='Adobe Express - file.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='contact_style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="{{url_for('static', filename='jquery-3.7.1.js')}}"></script>
+    <script src="{{url_for('static', filename='ham.js')}}"></script>
+</head>
+<body>
+    <header id="hdr">
+        <section class="logo">
+            <a href="/"><img src="{{url_for('static', filename='Adobe Express - file.png')}}" alt="logo"></a>
+            <!-- <img src="{{url_for('static', filename='logo.png')}}"> -->
+        </section>
+        <nav>
+        <section class="links">
+        <a href="/wedding">Weddings</a>
+        <a href="/corporate">Corporate events</a>
+        <a href="/privatep">Private Parties</a>
+        <a href="/menu">Menu</a>
+        </section>
+        <section class="dropdown">
+            {% if session.get('username') %}
+                <a href="/profile">Profile</a>
+            {% else %}
+                <a href="#">Account</a>
+                <section class="drop">
+                    <ul>
+                        <li><a href="/login">Log In</a></li>
+                        <li><a href="/sign">Sign In</a></li>
+                    </ul>
+                </section>
+            {% endif %}
+        </section>
+        </nav>
+        <button id="ham"><i class="fa fa-bars" style="font-size:24px"></i></button>
+    </header>
+    <section class="ham">
+            <ul id="list">
+                <li><a href="/wedding">Weddings</a></li>
+                <li><a href="/corporate">Corporate events</a></li>
+                <li><a href="/privatep">Private Parties</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/login">Log In</a></li>
+                <li><a href="/sign">Sign In</a></li>
+            </ul>
+    </section>
+    <main> 
+        <h1>Contact Us</h1>
+        <form action="/contact" method="post">
+            <p class="error">{{msg}}</p>
+            <p class="grn"> {{smsg}}</p>
+            <h2>Send us a Message</h2>
+            <label for="name">Name</label><br>
+            <input type="text" name="name" id="name"><br>
+            <p class="error">{{msg1}}</p>
+            <label for="mail">Email Id</label><br>
+            <input type="text" name="email" id="email"><br>
+            <p class="error">{{msg2}}</p>
+            <label for="message">Write Your Message</label><br>
+            <textarea name="msg" id="msg"></textarea><br>
+            <input type="submit" value="Send Message">
+
+            <!-- <label for="event">Select Event</label><br>
+            <select name="marriage" id="marriage">
+                <option value="marriage">Marriage Events</option>
+                <option value="corporate">Coorparate Events</option>
+                <option value="privatep">Private Parties</option>
+            </select> -->
+        </form><hr>
+        <section class="address">
+            <section class="add1">
+                <h3>India</h3>
+                <p>Chelapura, Charminar, Hyderabad, India, 500002</p><br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.9724513472515!2d78.46576467516441!3d17.365058583518376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb978ec36ba4d5%3A0x9ec6123e43703d93!2sG.M.K.Gallery!5e0!3m2!1sen!2suk!4v1775153651121!5m2!1sen!2suk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+            <section class="add2">
+                <h3>United Kingdom</h3>
+                <p>Hazel Grove, Hunter House, Feltham, UK, TW134DN</p><br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.6372023715235!2d-0.416964224488781!3d51.44645631515504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48767373d3369e3d%3A0x22eee3c703a2b1dd!2sHazel%20Grove%2C%20Feltham!5e0!3m2!1sen!2suk!4v1775153674424!5m2!1sen!2suk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+        </section>
+    </main>
+    <section class="btop">
+        <a href="#hdr"><i class="fa fa-arrow-up" style="font-size:24px"></i></a>
+    </section>
+    <footer>
+            <section class="footer1">
+            <h3>GMK CATERERS</h3>
+            <p>Your Event Our Service</p>
+            <section class="icons">
+                <i class="fa fa-instagram" style="font-size:24px"></i>
+                <i class="fa fa-facebook" style="font-size:24px"></i>
+                <i class="fa fa-twitter" style="font-size:24px"></i>
+            </section>
+            </section>
+            <section class="footer2">
+            <h4>Learn More</h4>
+            <ul>
+                <li><a href="/testimonial">Testimonials</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+            </section>
+    </footer>
+</body>
+</html>

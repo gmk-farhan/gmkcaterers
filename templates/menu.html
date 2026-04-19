@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='Adobe Express - file.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='menu_style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="{{url_for('static', filename='jquery-3.7.1.js')}}"></script>
+    <script src="{{url_for('static', filename='ham.js')}}"></script>
+</head>
+<body>
+    <header id="hdr">
+        <section class="logo">
+            <a href="/"><img src="{{url_for('static', filename='Adobe Express - file.png')}}" alt="logo"></a>
+            <!-- <img src="{{url_for('static', filename='logo.png')}}"> -->
+        </section>
+        <nav>
+        <section class="links">
+        <a href="/wedding">Weddings</a>
+        <a href="/corporate">Corporate events</a>
+        <a href="/privatep">Private Parties</a>
+        <a href="/menu">Menu</a>
+        </section>
+        <section class="dropdown">
+            {% if session.get('username') %}
+                <a href="/profile">Profile</a>
+            {% else %}
+                <a href="#">Account</a>
+                <section class="drop">
+                    <ul>
+                        <li><a href="/login">Log In</a></li>
+                        <li><a href="/sign">Sign In</a></li>
+                    </ul>
+                </section>
+            {% endif %}
+        </section>
+        </nav>
+        <button id="ham"><i class="fa fa-bars" style="font-size:24px"></i></button>
+    </header>
+    <section class="ham">
+            <ul id="list">
+                <li><a href="/wedding">Weddings</a></li>
+                <li><a href="/corporate">Corporate events</a></li>
+                <li><a href="/privatep">Private Parties</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/login">Log In</a></li>
+                <li><a href="/sign">Sign In</a></li>
+            </ul>
+    </section>
+    <main>
+        <section class="top">
+            <h1>Our Menu</h1>
+            <p>Seasonally inspired dishes crafted with locally sourced ingredients, designed to elevate your next event.</p>
+            <section class="book">
+                <a href="/order"><b>Book Now</b></a>
+            </section>
+        </section>
+        <section class="nav">
+            <button id="hum"><i class="fa fa-bars" style="font-size:24px"></i></button>
+            <ul id="items">
+            <li><a href="#all">All</a></li>
+            <li><a href="#appetizers">Appetizers</a></li>
+            <li><a href="#mains">Mains</a></li>
+            <li><a href="#sides">Sides</a></li>
+            <li><a href="#desserts">Desserts</a></li>
+            <li><a href="#beverages">Beverages</a></li>
+            </ul>
+        </section>
+        <section class="main" id="all">
+            <h2  id="appetizers">Appetizers</h2><hr>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$6.99</h3>
+                    <h3>SAMOSA</h3><br>
+                    <a href="" class="add"><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Stuffed potato, green Peas aromatic spices.</p>
+                    <section class="cat"><p>Vegetarian</p></section>          
+                </section>
+                <section class="items">
+                    <h3 class="price">$10.99</h3>
+                    <h3>GOBI 65</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Fry cauliflower mix with mint, corriander and spices</p>
+                    <section class="cat"><p>Vegetarian</p></section>           
+                </section>
+            </section>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$10.99</h3>
+                    <h3>GOBI MANCHURIAN</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Coated cauliflower mix with manchurian sauce.</p>
+                    <section class="cat"><p>Vegetarian</p></section>           
+                </section>
+                <section class="items">
+                    <h3 class="price">$11.99</h3>
+                    <h3>CHILLY PANEER</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Deep fried paneer mix with chilli sauce.</p>
+                    <section class="cat"><p>Vegetarian</p></section>   
+                </section>
+            </section>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$11.99</h3>
+                    <h3>CHICKEN 65</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Boneless chicken coated mix with curd, curry leaf sauce.</p> 
+                    <section class="cat"><p>Non-Vegetarian</p></section>           
+                </section>
+                <section class="items">
+                    <h3 class="price">$11.99</h3>
+                    <h3>CHILLY CHICKEN</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Fried chicken sauteed with onion bell pepper, chilli sauce.</p>
+                    <section class="cat"><p>Non-Vegetarian</p></section>            
+                </section>
+            </section>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$12.99</h3>
+                    <h3>CHILLY FISH</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Fried fish mix with cilly sauce.</p>
+                    <section class="cat"><p>Non-Vegetarian</p></section>   
+                </section>
+                <section class="items">
+                    <h3 class="price">$12.99</h3>
+                    <h3>APOLLO FISH</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Fry fish mix with slit chilly and curd sauce.</p>
+                    <section class="cat"><p>Non-Vegetarian</p></section>         
+                </section>
+            </section>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$11.99</h3>
+                    <h3>CHICKEN LOLLIPOPS</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Chicken wings marinated with grind spices, fried.</p>
+                    <section class="cat"><p>Non-Vegetarian</p></section>     
+                </section>
+                <section class="items">
+                    <h3 class="price">$10.99</h3>
+                    <h3>SWEET POTATOES</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Crispy Oven-Baked Sweet Potato Wedges.</p>
+                    <section class="cat"><p>Vegan</p></section>     
+                </section>
+            </section>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$10.99</h3>
+                    <h3>SMASHED POTATOES</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Crispy smashed potatoes oven-roasted, rustic, and crispy.</p>
+                    <section class="cat"><p>Vegan</p></section>     
+                </section>
+            </section>
+            <h2 id="mains">Mains</h2><hr>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$14.99</h3>
+                    <h3>MUTTON DUM BIRYANI</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Rice dish featuring marinated meat layered with fluffy basmati rice, spices, saffron, and ghee.</p>
+                    <section class="cat"><p>Non-Vegetarian</p></section>     
+                </section>
+                <section class="items">
+                    <h3 class="price">$13.99</h3>
+                    <h3>CHICKEN DUM BIRYANI</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Rice dish featuring marinated chicken layered with fluffy basmati rice, spices, saffron, and ghee.</p>
+                    <section class="cat"><p>Non-Vegetarian</p></section>     
+                </section>
+            </section>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$11.99</h3>
+                    <h3>VEG BIRYANI</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Rice dish featuring marinated veggies layered with fluffy basmati rice, spices, saffron, and ghee.</p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>
+                <section class="items">
+                    <h3 class="price">$13.99</h3>
+                    <h3>CHICKEN MANDI</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Rice dish featuring slow-cooked, tender chicken served over fragrant, spiced basmati rice.</p>
+                    <section class="cat"><p>Non-Vegetarian</p></section>     
+                </section>
+            </section>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$15.99</h3>
+                    <h3>FISH MANDI</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Rice dish featuring slow-cooked, tender fish served over fragrant, spiced basmati rice.</p>
+                    <section class="cat"><p>Non-Vegetarian</p></section>     
+                </section>
+                <section class="items">
+                    <h3 class="price">$13.99</h3>
+                    <h3>MUTTON MANDI</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Rice dish featuring slow-cooked, tender meat served over fragrant, spiced basmati rice.</p>
+                    <section class="cat"><p>Non-Vegetarian</p></section>     
+                </section>
+            </section>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$15.99</h3>
+                    <h3>HALEEM</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>hearty beef, lentil and oat porridge</p>
+                    <section class="cat"><p>Non-Vegetarian</p></section>     
+                </section>
+                <section class="items">
+                    <h3 class="price">$10.99</h3>
+                    <h3>MURGH MUSALLAM</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>A whole chicken marinated in yogurt and spices</p>
+                    <section class="cat"><p>Non-Vegetarian</p></section>     
+                </section>
+            </section>
+            <h2 id="sides">Sides</h2><hr>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$4.99</h3>
+                    <h3>MIRCH KA SALAN</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p> A rich, tangy, and nutty curry made with long green chillies, peanuts, sesame seeds, and tamarind. </p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>
+                <section class="items">
+                    <h3 class="price">$5.99</h3>
+                    <h3>BAGARE BAIGAN</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Tangy peanut-sesame curry.</p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>
+            </section>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$4.99</h3>
+                    <h3>BURHANI RAITA</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>A thick yogurt raita infused with garlic, cumin, and mint.</p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>     
+                <section class="items">
+                    <h3 class="price">$1.99</h3>
+                    <h3>NAAN</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>A leavened, oven-baked or tawa-fried flatbread.</p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>
+            </section>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$1.99</h3>
+                    <h3>LACHHA PARATHA</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Multi-layered, shallow-fried flatbread crispy, flaky texture and visible spiral layers.</p>
+                    <section class="cat"><p>Vegetarian</p></section>          
+                </section>
+                <section class="items">
+                    <h3 class="price">$1.99</h3>
+                    <h3>RUMALI ROTI</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>An extremely thin, soft, and pliable Indian flatbread.</p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>
+            </section>
+            <h2 id="desserts">Desserts</h2><hr>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$3.99</h3>
+                    <h3>DOUBLE KA MEETHA</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Fried bread slices soaked in saffron-cardamom spiced milk, cream, and sugar syrup.</p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>
+                <section class="items">
+                    <h3 class="price">$3.99</h3>
+                    <h3>QURBANI KA MEETHA</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Dried apricots stewed into a thick, syrupy compote.</p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>
+            </section>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$3.99</h3>
+                    <h3>JOUZI HALWA</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Dessert with milk, ghee, and sprouted wheat with nutmeg, saffron, and nuts.</p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>
+                <section class="items">
+                    <h3 class="price">$4.99</h3>
+                    <h3>RABDI</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>A thick, sweetened, and layered consistency of full-fat milk, often flavored with saffron, cardamom, and nuts.</p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>
+            </section>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$2.99</h3>
+                    <h3>FRUIT CREAM</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Assorted fresh fruits into sweetened, whipped cream.</p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>
+                <section class="items">
+                    <h3 class="price">$9.99</h3>
+                    <h3>GIL E FIRDOUS</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>Pudding made from grated bottle gourd, sabudana (sago), milk, and nuts.</p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>
+            </section>
+            <h2 id="beverages">Beverages</h2><hr>
+            <section class="menu">
+                <section class="items">
+                    <h3 class="price">$1.99</h3>
+                    <h3>IRANI CHAI</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>A rich, creamy, and slow-brewed tea.</p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>
+                <section class="items">
+                    <h3 class="price">$1.99</h3>
+                    <h3>MOJITO</h3><br>
+                    <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a> 
+                    <p>A crisp, refreshing, and aromatic drink.</p>
+                    <section class="cat"><p>Vegetarian</p></section>     
+                </section>
+            </section>  
+        </section>
+        <section class="bottom">
+            <section class="ready">
+            <h2>Ready to Plan Your Event?</h2>
+            <p>Our team will work with you to customize the perfect menu. Minimum 20 guests for catering orders.</p>
+            <section class="book">
+                <a href="/order"><b>Book Now</b></a>
+            </section>
+        </section>
+        </section>
+        <section class="btop">
+            <a href="#hdr"><i class="fa fa-arrow-up" style="font-size:24px"></i></a>
+        </section>
+    </main>
+    <footer>
+            <section class="footer1">
+            <h3>GMK CATERERS</h3>
+            <p>Your Event Our Service</p>
+            <section class="icons">
+                <i class="fa fa-instagram" style="font-size:24px"></i>
+                <i class="fa fa-facebook" style="font-size:24px"></i>
+                <i class="fa fa-twitter" style="font-size:24px"></i>
+            </section>
+            </section>
+            <section class="footer2">
+            <h4>Learn More</h4>
+            <ul>
+                <li><a href="/testimonial">Testimonials</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+            </section>
+    </footer>
+    <script>
+        let cart = document.querySelectorAll(".fa-plus");
+        cart.forEach(item => {
+        item.addEventListener("click", (refresh) => {
+        refresh.preventDefault();
+        item.classList.remove("fa-plus");
+        item.classList.add("fa-check");
+        item.style.color = "green";
+    });
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    line-height: 1.6;
+    font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: "Playfair Display", serif;
+}
+p, a, button, ul,li{
+    font-family: "Open Sans", sans-serif;
+}
+header{
+    background-color: #a6a6a8;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    a{
+        text-decoration: none;
+        color: black;
+        padding: 20px;
+        font-family: "Playfair Display", serif;
+    }
+    
+    ul{
+        list-style-type: none;
+    }
+.logo{
+    padding: 10px 0 0 20px;
+    img{
+        width: 80px;
+        height: 100px;
+    }
+}}
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 10px auto;
+}
+.dropdown{
+    position: relative;
+}
+.drop{
+    display: none;
+    position: absolute;
+    line-height: 25px;
+    background-color: #a6a6a8;
+}
+.dropdown:hover .drop{
+    display: block;
+}
+.ham{
+    display: none;
+    width: 40%;
+    position: absolute;
+    right: 0;
+    padding-right: 10px;
+    text-align: right;
+    background-color: #a6a6a8;
+    ul{
+        list-style: none;
+        padding: 5%;
+    }
+    a{
+        text-decoration: none;
+    }
+}
+button{
+    display: none;
+    padding: 5%;
+    background: none;
+    border: none;
+    /* float: right; */
+    /* margin-top: 10%; */
+}
+footer{
+    background-color: #a6a6a8;
+    padding: 4%;
+    display: flex;
+    justify-content: space-between;
+.icons{
+    margin-top: 10%;
+    i{
+        margin-right: 10%;
+    }
+}
+    ul{
+        margin-top: 10%;
+        list-style-type: none;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+    }
+}
+a{
+    color: black;
+}
+.book{
+    background-color: #a6a6a6;
+    width: fit-content;
+    margin: 2px auto;
+    padding: 5px;
+    border-radius: 5%;
+    font-size: 18px;
+    a{
+        color: black;
+        text-decoration: none;
+    }
+}
+.book:hover{
+    background-color: #b3b3b5;
+    }
+.btop{
+    background-color: #a6a6a6;
+    /* border: 2px solid; */
+    width: fit-content;
+    padding: 1%;
+    border-radius: 100%;
+    float: right;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    a{
+        text-decoration: none;
+    }
+    p{
+        display: none;
+    }
+}
+.btop:hover{
+    p{
+        display: block;
+    }
+}
+@media screen and (max-width: 750px){
+    button{
+        display: block;
+    }
+    nav{
+        display: none;
+    }
+    .ham{
+        display: block;
+    }
+}

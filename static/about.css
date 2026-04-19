@@ -1,0 +1,47 @@
+main{
+    /* margin: 3%; */
+    h1{
+        text-align: center;
+        padding: 3%;
+    }
+    img{
+        width: 20vw;
+        /* height: 60vh; */
+        border-radius: 5%;
+    }
+}
+.about{
+    display: flex;
+    justify-content:center;
+    padding: 3%;
+}
+.text{
+    margin: 2%;
+    width: 40vw;
+    height: 30vh;
+    /* border: 2px solid; */
+    place-items: center;
+}
+.histroy{
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    background-color: #E8E9F3;
+}
+.gallery{
+    padding: 2%;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    img{
+        width: 30vw;
+    }
+}
+@media screen and (max-width: 750px){
+    #text{
+        display: none;
+    }
+    .text{
+        overflow: scroll;
+    }
+}

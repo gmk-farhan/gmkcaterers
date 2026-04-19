@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='Adobe Express - file.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='index_style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="{{url_for('static', filename='jquery-3.7.1.js')}}"></script>
+    <script src="{{url_for('static', filename='ham.js')}}"></script>
+</head>
+<body>
+    <header id="hdr">
+        <section class="logo">
+            <a href="/"><img src="{{url_for('static', filename='Adobe Express - file.png')}}" alt="logo"></a>
+            <!-- <img src="{{url_for('static', filename='logo.png')}}"> -->
+        </section>
+        <nav>
+        <section class="links">
+        <a href="/wedding">Weddings</a>
+        <a href="/corporate">Corporate events</a>
+        <a href="/privatep">Private Parties</a>
+        <a href="/menu">Menu</a>
+        </section>
+        <section class="dropdown">
+            {% if session.get('username') %}
+                <a href="/profile">Profile</a>
+            {% else %}
+                <a href="#">Account</a>
+                <section class="drop">
+                    <ul>
+                        <li><a href="/login">Log In</a></li>
+                        <li><a href="/sign">Sign In</a></li>
+                    </ul>
+                </section>
+            {% endif %}
+        </section>
+        </nav>
+        <button id="ham"><i class="fa fa-bars" style="font-size:24px"></i></button>
+    </header>
+    <section class="ham">
+            <ul id="list">
+                <li><a href="/wedding">Weddings</a></li>
+                <li><a href="/corporate">Corporate events</a></li>
+                <li><a href="/privatep">Private Parties</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/login">Log In</a></li>
+                <li><a href="/sign">Sign In</a></li>
+            </ul>
+    </section>
+    <main>
+        <section class="gallery">
+            <img src="{{url_for('static', filename='storyboard-.png')}}" alt="storyboard">
+            <section class="info">
+            <h3>Thinking of an Event Catering</h3>
+            <h3>We are here!</h3>
+            <section class="book">
+                <a href="/order"><b>Book Now</b></a>
+            </section>
+            </section>
+        </section> 
+        <section class="services">
+            <section class="events">
+                <section class="img">
+                    <img src="{{url_for('static', filename='wedding.jpg')}}" alt="A bride and groom hold a bouquet together.">
+                </section>
+                <section class="txt">
+                    <h2>Wedding Events</h2>
+                    <p>Your Wedding, Our Cuisine – A Perfect Match</p>
+                    <a href="/wedding">Explore More <i class="fa fa-arrow-right"></i></a>
+                </section>
+            </section>
+            <section class="events">
+                <section class="img">
+                    <img src="{{url_for('static', filename='office.jpg')}}" alt="office  colleagues standing around and chatting while a table is filled with a variety of food.">
+                </section>
+                <section class="txt">
+                    <h2>Corporate events</h2>
+                    <p>Fueling Productivity, One Bite at a Time.</p>
+                    <a href="/corporate">Explore More <i class="fa fa-arrow-right"></i></a>
+                </section>
+            </section>
+            <section class="events">
+                <section class="img">
+                    <img src="{{url_for('static', filename='privatep.jpg')}}" alt="children at a birthday party gathered around a cake, smiling and reacting excitedly.">
+                </section>
+                <section class="txt">
+                    <h2>Private Parties</h2>
+                    <p>Your Event, Our Passion: Delicious Food, Every Time</p>
+                    <a href="/privatep">Explore More <i class="fa fa-arrow-right"></i></a>
+                </section>
+            </section>
+        </section>
+        <section class="testimonials">
+            <h1><a href="/testimonial">Testimonials</a></h1>
+            <p>Here's What People are saying</p>
+            <div class="feedbacks">
+            <div class="group">
+                <div class="card">
+                <p>Very impressed with quality, timely setup, and courteous staff—everything ran smoothly from start to finish.</p>
+                <h4><i class="fa fa-user-circle-o" style="font-size:24px"></i> Liam</h4>
+                </div>
+                <div class="card">
+                <p>Outstanding service with fresh food, excellent variety, and attentive staff who handled everything perfectly.</p>
+                <h4><i class="fa fa-user-circle-o" style="font-size:24px"></i> Noah</h4>
+                </div>
+            </div>
+            <div class="group">
+                <div class="card">
+                <p>Great catering service with tasty food, punctual delivery, and friendly staff who made the event stress-free.</p>
+                <h4><i class="fa fa-user-circle-o" style="font-size:24px"></i> Olivia</h4>
+                </div>
+                <div class="card">
+                <p>Outstanding service with fresh food, excellent variety, and attentive staff who handled everything perfectly.</p>
+                <h4><i class="fa fa-user-circle-o" style="font-size:24px"></i> Noah</h4>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <section class="btop">
+        <a href="#hdr"><i class="fa fa-arrow-up" style="font-size:24px"></i></a>
+    </section>
+    <footer>
+            <section class="footer1">
+            <h3>GMK CATERERS</h3>
+            <p>Your Event Our Service</p>
+            <section class="icons">
+                <i class="fa fa-instagram" style="font-size:24px"></i>
+                <i class="fa fa-facebook" style="font-size:24px"></i>
+                <i class="fa fa-twitter" style="font-size:24px"></i>
+            </section>
+            </section>
+            <section class="footer2">
+            <h4>Learn More</h4>
+            <ul>
+                <li><a href="/testimonial">Testimonials</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+            </section>
+    </footer>
+    <script>
+    </script>
+</body>
+</html>

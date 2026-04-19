@@ -1,0 +1,15 @@
+main{
+            margin: 20px auto;
+            width: fit-content;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid #a6a6a8;
+            border-radius: 20px;
+            box-shadow: 5px 5px #b3b3b5;
+        }
+        .error{
+            color: red;
+        }
+        .green{
+            color: green;
+        }
